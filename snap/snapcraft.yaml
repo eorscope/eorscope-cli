@@ -19,6 +19,9 @@ description: |
 license: MIT AND CC-BY-4.0
 grade: stable
 confinement: strict
+title: EOR Scope
+contact: research@eorscope.com
+issues: https://github.com/eorscope/eorscope-cli/issues
 website: https://eorscope.com/eor-cost-calculator/
 source-code: https://github.com/eorscope/eorscope-cli
 
