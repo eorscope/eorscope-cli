@@ -1,0 +1,32 @@
+name: eorscope
+base: core24
+version: '0.1.0'
+summary: Statutory employer cost of an employee in 76 countries
+description: |
+  eorscope prints what an employee costs the employer in 76 countries before
+  any Employer of Record (EOR) fee: gross salary plus the statutory employer
+  contributions and statutory extras of the country, line by line, from the
+  EOR Scope dataset (each line read from an official source wherever one
+  exists, with its check date).
+
+    eorscope countries
+    eorscope cost DE 66050
+    eorscope changes US --json
+
+  The dataset is embedded: no network access, no account, no telemetry.
+  Data: https://eorscope.com/data/ (CC BY 4.0). Cost comparison, not legal
+  or tax advice.
+license: MIT AND CC-BY-4.0
+grade: stable
+confinement: strict
+website: https://eorscope.com/eor-cost-calculator/
+source-code: https://github.com/eorscope/eorscope-cli
+
+apps:
+  eorscope:
+    command: bin/eorscope
+
+parts:
+  eorscope:
+    plugin: rust
+    source: .

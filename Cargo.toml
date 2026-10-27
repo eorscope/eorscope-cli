@@ -1,0 +1,29 @@
+[package]
+name = "eorscope-cli"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "Statutory employer cost of an employee in 76 countries, and dated changes to employer contributions, from the EOR Scope dataset."
+license = "MIT"
+homepage = "https://eorscope.com/eor-cost-calculator/"
+repository = "https://github.com/eorscope/eorscope-cli"
+readme = "README.md"
+keywords = ["payroll", "employer", "social-security", "eor", "cli"]
+categories = ["command-line-utilities", "finance"]
+include = ["src/**", "data/**", "README.md", "LICENSE", "Cargo.toml", "Cargo.lock"]
+
+[[bin]]
+name = "eorscope"
+path = "src/main.rs"
+
+[dependencies]
+csv = "1"
+eorscope = "0.1.0"
+serde_json = "1"
+
+[dev-dependencies]
+sha2 = "0.10"
+
+[profile.release]
+lto = true
+strip = true
